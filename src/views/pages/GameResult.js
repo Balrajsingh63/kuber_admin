@@ -193,7 +193,7 @@ const GameResultScreen = () => {
 
                     <Button
                       color="info"
-                      href="#pablo"
+
                       onClick={handleSubmit}
                       size="lg"
                       style={{ alignSelf: 'center' }}

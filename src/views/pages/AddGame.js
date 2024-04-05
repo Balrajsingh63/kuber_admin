@@ -167,7 +167,7 @@ const AddGameScreen = () => {
                     </Row>
                     <Button
                       color="info"
-                      href="#pablo"
+
                       onClick={handleSubmit}
                       size="lg"
                       style={{ alignSelf: 'center' }}

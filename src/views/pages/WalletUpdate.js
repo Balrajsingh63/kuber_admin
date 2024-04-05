@@ -150,7 +150,6 @@ const WalletUpdate = () => {
                         </h1>
                         <Button
                           color="info"
-                          href="#pablo"
                           onClick={handleSubmit}
                         >
                           Update Wallet

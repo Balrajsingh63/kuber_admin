@@ -27,5 +27,6 @@ export const ApiURL = {
   delete_Game: "game/delete",
   update_Game: "game/update",
   filter_game: 'game/filter-game',
-  update_wallet: 'game/update-wallet'
+  update_wallet: 'game/update-wallet',
+  update_wallet_Admin: "payment/addmoney-wallet"
 };

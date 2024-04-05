@@ -142,7 +142,7 @@ const Login = () => {
           <Col xs="6">
             <a
               className="text-light"
-              href="#pablo"
+
               onClick={(e) => e.preventDefault()}
             >
               <small>Forgot password?</small>
@@ -151,7 +151,7 @@ const Login = () => {
           <Col className="text-right" xs="6">
             <a
               className="text-light"
-              href="#pablo"
+
               onClick={(e) => e.preventDefault()}
             >
               <small>Create new account</small>

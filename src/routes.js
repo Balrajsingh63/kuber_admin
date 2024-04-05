@@ -4,6 +4,7 @@ import GameRequestList from "views/pages/GameList";
 import GameRequest from "views/pages/GameRequest";
 import GameResultScreen from "views/pages/GameResult";
 import Profile from "views/pages/Profile.js";
+import AddMoney from "views/pages/AddMoney";
 import TodayResultScreen from "views/pages/TodayResult";
 import UserManagement from "views/pages/UserManagement";
 import WalletUpdate from "views/pages/WalletUpdate";
@@ -85,7 +86,13 @@ var routes = [
     component: <Profile />,
     layout: "/admin",
   },
-
+  {
+    path: "/add-money",
+    name: "Add Money",
+    icon: "ni ni-single-02 text-yellow",
+    component: <AddMoney />,
+    layout: "/admin",
+  },
 ];
 
 

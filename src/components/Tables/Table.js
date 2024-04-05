@@ -67,7 +67,7 @@ const Tables = ({ user_data, toggleModal, setVisible, visible, setName, setPhone
                                         <UncontrolledDropdown>
                                             <DropdownToggle
                                                 className="btn-icon-only text-light"
-                                                href="#pablo"
+
                                                 role="button"
                                                 size="sm"
                                                 color=""
@@ -77,13 +77,13 @@ const Tables = ({ user_data, toggleModal, setVisible, visible, setName, setPhone
                                             </DropdownToggle>
                                             <DropdownMenu className="dropdown-menu-arrow" right>
                                                 <DropdownItem
-                                                    href="#pablo"
+
                                                     onClick={(e) => handleDelete(item)}
                                                 >
                                                     Delete
                                                 </DropdownItem>
                                                 <DropdownItem
-                                                    href="#pablo"
+
                                                     onClick={(e) => toggleModal(item)}
                                                 >
                                                     Edit

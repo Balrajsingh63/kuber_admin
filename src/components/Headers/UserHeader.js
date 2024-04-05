@@ -30,7 +30,7 @@ const UserHeader = ({ title }) => {
               {
                 title ? <Button
                   color="info"
-                  href="#pablo"
+
                   onClick={(e) => e.preventDefault()}
                 >
                   {title}
