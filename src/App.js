@@ -13,18 +13,25 @@ import AuthLayout from "layouts/Auth.js";
 
 const App = () => {
 	const userData = useSelector((state) => state.authReducer.user);
+
 	return (
 		<BrowserRouter>
 			<Routes>
+				{/* Authenticated Routes */}
 				{userData?.token ? (
-					<Route path='/admin/*' element={<AdminLayout />} />
+					<>
+						<Route path='/admin/*' element={<AdminLayout />} />
+						<Route
+							path='*'
+							element={<Navigate to='/admin/index' replace />}
+						/>
+					</>
 				) : (
-					<Route path='/auth/*' element={<AuthLayout />} />
-				)}
-				{userData?.token ? (
-					<Route path='*' element={<Navigate to='/admin/index' replace />} />
-				) : (
-					<Route path='*' element={<Navigate to='/Auth/login' replace />} />
+					<>
+						{/* Non-Authenticated Routes */}
+						<Route path='/auth/*' element={<AuthLayout />} />
+						<Route path='*' element={<Navigate to='/auth/login' replace />} />
+					</>
 				)}
 			</Routes>
 		</BrowserRouter>

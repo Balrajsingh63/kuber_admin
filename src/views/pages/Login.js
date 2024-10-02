@@ -19,8 +19,10 @@ import { post } from "../../services/services";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/Slice/Slice";
 import { SuccessToast, ErrorToast } from "../../Helper/Toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+	const navigate = useNavigate();
 	const despatch = useDispatch();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -35,7 +37,7 @@ const Login = () => {
 			password: password,
 		};
 		post(ApiURL.login, formData).then((res) => {
-			if (res && res?.status == true) {
+			if (res && res?.status === true) {
 				let user_data = res?.data;
 				let token = user_data.token;
 				localStorage.setItem("token", token);
@@ -48,6 +50,7 @@ const Login = () => {
 	};
 
 	const handleSubmit = () => {
+		// adminRegister();
 		userLogin();
 		// if (checkValidation() == false) {
 		// 	return;
@@ -56,20 +59,20 @@ const Login = () => {
 		// }
 	};
 
-	const checkValidation = () => {
-		const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-		const isValidEmail = emailRegex.test(email);
-		if (email == "") {
-			setEmailError("Email is required !");
-			return false;
-		} else if (password == "") {
-			setPasswordError("Password is required !");
-			return false;
-		} else if (checkBox == "") {
-			setCheckBoxError("CheckBox is required !");
-			return false;
-		}
-	};
+	// const checkValidation = () => {
+	// 	const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+	// 	const isValidEmail = emailRegex.test(email);
+	// 	if (email == "") {
+	// 		setEmailError("Email is required !");
+	// 		return false;
+	// 	} else if (password == "") {
+	// 		setPasswordError("Password is required !");
+	// 		return false;
+	// 	} else if (checkBox == "") {
+	// 		setCheckBoxError("CheckBox is required !");
+	// 		return false;
+	// 	}
+	// };
 
 	return (
 		<>
@@ -77,7 +80,7 @@ const Login = () => {
 				<Card className='bg-secondary shadow border-0'>
 					<CardBody className='px-lg-5 py-lg-5'>
 						<div className='text-center text-muted mb-4'>
-							<small>Sign in with credentials</small>
+							<h2>Admin Sign in</h2>
 						</div>
 						<Form role='form'>
 							<FormGroup className='mb-3'>
@@ -98,7 +101,7 @@ const Login = () => {
 									/>
 								</InputGroup>
 								<p style={{ color: "red", fontSize: 15 }}>
-									{email == "" ? emailError : ""}
+									{email === "" ? emailError : ""}
 								</p>
 							</FormGroup>
 							<FormGroup>
@@ -119,7 +122,7 @@ const Login = () => {
 									/>
 								</InputGroup>
 								<p style={{ color: "red", fontSize: 15 }}>
-									{password == "" ? passwordError : ""}
+									{password === "" ? passwordError : ""}
 								</p>
 							</FormGroup>
 							<div className='custom-control custom-control-alternative custom-checkbox'>
@@ -160,9 +163,9 @@ const Login = () => {
 						</a>
 					</Col>
 					<Col className='text-right' xs='6'>
-						<a className='text-light' onClick={(e) => e.preventDefault()}>
+						<Link to='/auth/register' className='text-light'>
 							<small>Create new account</small>
-						</a>
+						</Link>
 					</Col>
 				</Row>
 			</Col>

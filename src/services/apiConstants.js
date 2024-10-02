@@ -3,8 +3,8 @@
 const liveURL = "https://kuberfun.com/v1/admin/";
 const socketLiveURL = "https://kuberfun.com";
 
-export const localURL = "http://192.168.1.6:3006/v1/admin/";
-const socketLocalURL = "http://192.168.1.6:3006";
+export const localURL = "http://192.168.1.5:3006/v1/admin/";
+const socketLocalURL = "http://192.168.1.5:3006";
 
 // export const baseURL = liveURL;
 export const baseURL = localURL;
